@@ -1,6 +1,5 @@
-#!/bin/bash
-gcc -S -masm=intel $CFILE#include <stdio.h>
-
+#include <stdio.h>
+#include <stdlib.h>
 /**
 *main - Entry point
 *
