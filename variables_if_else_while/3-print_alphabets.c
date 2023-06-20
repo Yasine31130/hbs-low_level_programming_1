@@ -6,13 +6,14 @@
  */
 int main(void)
 {
-	char alphmin, alphmaj;
+	char alphmin; 
+	char alphmaj;
 
-	for (alphmin = 'a'; 'a' < 'z'; alphmin++)
+	for (alphmin = 'a'; alphmin <= 'z'; alphmin++)
 	{
 		putchar(alphmin);
 	}
-	for (alphmaj = 'A'; 'A' < 'Z'; alphmaj++)
+	for (alphmaj = 'A'; alphmaj <= 'Z'; alphmaj++)
 	{
 		putchar(alphmaj);
 	}
