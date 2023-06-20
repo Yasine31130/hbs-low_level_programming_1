@@ -6,7 +6,7 @@
  */
 int main(void)
 {
-	char alphmin; 
+	char alphmin;
 	char alphmaj;
 
 	for (alphmin = 'a'; alphmin <= 'z'; alphmin++)
