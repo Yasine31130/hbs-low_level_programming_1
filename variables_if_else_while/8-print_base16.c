@@ -8,11 +8,12 @@ int main(void)
 {
 	int valeur = 48;
 
-	while (valeur < 102)
+	while (valeur <= 102)
 	{
 		if (valeur == 58)
 		{
 			valeur = 97;
+			valeur++;
 		}
 	putchar(valeur);
 	}
