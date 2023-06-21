@@ -13,9 +13,9 @@ int main(void)
 		if (valeur == 58)
 		{
 			valeur = 97;
-			valeur++;
 		}
-	putchar(valeur);
+		putchar(valeur);
+		valeur++;
 	}
 	putchar('\n');
 	return (0);
