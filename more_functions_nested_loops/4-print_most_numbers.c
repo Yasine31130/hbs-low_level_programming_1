@@ -2,7 +2,7 @@
 /**
  * print_most_numbers - Description
  * @n: variable
- * Return: show numbers from 0 to 9 
+ * Return: show numbers from 0 to 9 but not 2 and 4
  */
 void print_most_numbers(void)
 {
@@ -10,7 +10,7 @@ void print_most_numbers(void)
 
 	while (n < 10)
 	{
-		if(n != 2 && n != 4)
+		if (n != 2 && n != 4)
 		{
 			_putchar(n + '0');
 		}
