@@ -1,10 +1,9 @@
 #include "main.h"
 /**
- * print_line - Description
+ * print_diagonal - Description
  * @n: variable
- * print_diagonal - print the given numbers of lines of diagonals
+ * Return:  print the given numbers of lines of diagonals
  */
-
 void print_diagonal(int n)
 {
 	int i, j;
