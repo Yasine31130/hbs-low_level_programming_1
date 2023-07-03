@@ -2,7 +2,7 @@
 /**
  * _print_rev_recursion - Description
  * @s: pntr
- * Return: 
+ * Return: Write a function that prints a string in reverse
  */
 void _print_rev_recursion(char *s)
 {
