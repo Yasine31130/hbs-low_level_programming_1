@@ -1,42 +1,40 @@
 #include "main.h"
 #include <stdlib.h>
+#include <stdio.h>
 /**
- * alloc_grid - fonction
- * @width: the width of the 2-dimensional array
- * @height: the height of the 2-dimensional array
+ * alloc_grid - point
+ * @width: width
+ * @height: height
  *
- * Return: If width <= 0, height <= 0, or the function fails - NULL.
+ * Return: Always 1 (True) or 0 (False)
  */
 int **alloc_grid(int width, int height)
 {
-	int **twod;
-	int hgt_i, wid_i;
+	int h = 0;
+	int **table;
+	int fr = 0;
 
-	if (width <= 0 || height <= 0)
+	if (height <= 0 || width <= 0)
 		return (NULL);
 
-	twod = malloc(sizeof(int *) * height);
+	table = malloc(sizeof(int *) * (height));
 
-	if (twod == NULL)
-		return (NULL);
-
-	for (hgt_i = 0; hgt_i < height; height++)
+	if (table == 0)
 	{
-		twod[hgt_i] = malloc(sizeof(int) * width);
-
-		if (twod[hgt_i] == NULL)
+		free(table);
+		return (NULL);
+	}
+	for (; h < height; h++)
+	{
+		table[h] = malloc(sizeof(int) * width);
+		if (table[h] == 0)
 		{
-			for (hgt_i = 0; hgt_i >= 0; hgt_i--)
-				free(twod[hgt_i]);
-
-			free(twod);
+			for (; fr <= h; fr++)
+				free(table[fr]);
+			free(table);
 			return (NULL);
 		}
 	}
-	for (hgt_i = 0; hgt_i < height; hgt_i++)
-	{
-		for (wid_i = 0; wid_i < width; wid_i++)
-			twod[hgt_i][wid_i] = 0;
-	}
-	return (twod);
+
+	return (table);
 }
