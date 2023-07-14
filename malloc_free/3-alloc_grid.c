@@ -1,47 +1,42 @@
-#include <stdlib.h>
-#include <stdio.h>
 #include "main.h"
+#include <stdlib.h>
 /**
- * alloc_grid - Description
- * @width: var
- * @height: var
- * Return: function that returns a pointer to a 2 dimensional array of integers
+ * alloc_grid - fonction
+ * @width: the width of the 2-dimensional array
+ * @height: the height of the 2-dimensional array
+ *
+ * Return: If width <= 0, height <= 0, or the function fails - NULL.
  */
 int **alloc_grid(int width, int height)
 {
-	int **ptr = NULL;
-	int i = 0;
-	int column, row;
+	int **twod;
+	int hgt_i, wid_i;
 
 	if (width <= 0 || height <= 0)
-	{
 		return (NULL);
-	}
 
-	ptr = malloc(sizeof(int *) * width);
-	if (ptr == NULL)
-	{
+	twod = malloc(sizeof(int *) * height);
+
+	if (twod == NULL)
 		return (NULL);
-	}
 
-	for (row = 0; row < width; row++)
+	for (hgt_i = 0; hgt_i < height; height++)
 	{
-		ptr[row] = malloc(sizeof(int) * height);
-		if (ptr[row] == NULL)
-		{
-			for (i = 0; i <= row; i--)
-			{
-				free(ptr[i]);
+		twod[hgt_i] = malloc(sizeof(int) * width);
 
-				free(ptr);
-				return (NULL);
-			}
-		}
-		for (column = 0; column < width; column++)
+		if (twod[hgt_i] == NULL)
 		{
-			ptr[row][column] = 0;
+			for (hgt_i = 0; hgt_i >= 0; hgt_i--)
+				free(twod[hgt_i]);
+
+			free(twod);
+			return (NULL);
 		}
 	}
-
-	return (ptr);
+	for (hgt_i = 0; hgt_i < height; hgt_i++)
+	{
+		for (wid_i = 0; wid_i < width; wid_i++)
+			twod[hgt_i][wid_i] = 0;
+	}
+	return (twod);
 }
