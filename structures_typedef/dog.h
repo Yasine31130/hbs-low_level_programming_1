@@ -1,8 +1,13 @@
-#ifndef dog
+#ifndef DOG_H
+#define DOG_H
 #include <stdio.h>
 /**
- * dog - Description
- * Return: struct of var
+ * struct dog - Description
+ * @name: name of dog
+ * @age: age of dog
+ * @owner: owner of dog
+ *
+ * Description: Longer description
  */
 struct dog
 {
